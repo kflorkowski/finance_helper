@@ -1,0 +1,20 @@
+# Pliki utworzone przez Python
+*.pyc
+__pycache__
+
+# Katalogi i pliki związane z wirtualnym środowiskiem
+venv/
+env/
+
+# Pliki związane z bazą danych SQLite (jeśli używasz SQLite)
+db.sqlite3
+
+# Pliki konfiguracyjne IDE (np. Visual Studio Code, PyCharm)
+.vscode/
+.idea/
+
+# Pliki tymczasowe
+*.log
+*.swp
+
+# Inne pliki i katalogi, które chce zignorować
