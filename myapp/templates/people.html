@@ -1,0 +1,25 @@
+{% extends 'base_logedin.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="person-list">
+            <h3>Added People</h3>
+            <ul>
+                {% for person in persons %}
+                    <li>{{ person.firstname }} {{ person.lastname }}</li>
+                {% empty %}
+                    <li>No people added yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="person-add-form">
+        <h3>Add New Person</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Person</button>
+        </form>
+    </div>
+{% endblock %}

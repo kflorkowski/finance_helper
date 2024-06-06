@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import PersonForm
+from .models import Person
 
 
 @login_required
@@ -16,4 +17,5 @@ def people(request):
             return redirect('people')
     else:
         form = PersonForm()
-    return render(request, 'people.html', {'form': form})
+    persons = Person.objects.filter(user=request.user)
+    return render(request, 'people.html', {'form': form, 'persons': persons})
