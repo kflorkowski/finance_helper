@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'finance_helper.wsgi.application'
 DATABASES = {
     'default': {
         'HOST': '127.0.0.1',
-        'NAME': 'exercises',
+        'NAME': 'finance_project',
         'ENGINE': 'django.db.backends.postgresql',
         'USER': 'postgres',
         'PASSWORD': 'coderslab',
