@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, UserLoginForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
@@ -30,3 +31,8 @@ def login_view(request):
     else:
         form = UserLoginForm()
     return render(request, 'login.html', {'form': form})
+
+
+@login_required
+def home(request):
+    return render(request, 'home.html')
