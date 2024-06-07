@@ -1,5 +1,5 @@
 from django import forms
-from .models import Person
+from .models import Person, Job
 
 
 class PersonForm(forms.ModelForm):
@@ -16,3 +16,9 @@ class PersonForm(forms.ModelForm):
         if commit:
             person.save()
         return person
+
+
+class JobForm(forms.ModelForm):
+    class Meta:
+        model = Job
+        fields = ['company', 'position', 'gross_salary', 'contract']
