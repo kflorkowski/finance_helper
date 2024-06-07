@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance helper</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Finance</a></li>
+                <li><a href="{% url 'people' %}">People</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+            <ul>
+            <li><a href="{% url 'personal_details' person_id=person.id %}">Details</a></li>
+{#            <li><a href="{% url 'job' person_id=person.id %}">Job</a></li>#}
+{#            <li><a href="{% url 'payroll' person_id=person.id %}">Payroll</a></li>#}
+        </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+</html>

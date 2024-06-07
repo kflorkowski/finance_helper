@@ -1,0 +1,16 @@
+{% extends "person_manage_base.html" %}
+
+{% block content %}
+    <h2>{{ person.firstname }} {{ person.lastname }}</h2>
+    <p>Firstname: {{ person.firstname }}</p>
+    <p>Lastname: {{ person.lastname }}</p>
+    <p>Gender: {{ person.gender }}</p>
+    <p>Birth Date: {{ person.birth_date }}</p>
+
+    <h3>Jobs</h3>
+    <ul>
+        {% for job in jobs %}
+            <li>{{ job.company }} - {{ job.position }} - {{ job.gross_salary }} - {{ job.contract }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
