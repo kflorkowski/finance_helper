@@ -1,0 +1,23 @@
+{% extends "person_manage_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ person.firstname }} {{ person.lastname }} - Job List</h2>
+
+        <h3>Existing Jobs</h3>
+        <ul>
+            {% for job in jobs %}
+                <li>{{ job.company }} - {{ job.position }} - {{ job.gross_salary }} - {{ job.contract }}</li>
+            {% empty %}
+                <li>No jobs added yet.</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Add Job</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Job</button>
+        </form>
+    </div>
+{% endblock %}
