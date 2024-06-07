@@ -3,7 +3,7 @@ from .models import Person
 
 
 class PersonForm(forms.ModelForm):
-    birth_date = forms.DateField(input_formats=['%d/%m/%Y'], widget=forms.DateInput(attrs={'type': 'date'}))
+    birth_date = forms.DateField(input_formats=['%d/%m/%Y', '%Y-%m-%d'], widget=forms.DateInput(attrs={'type': 'date'}))
 
     class Meta:
         model = Person
