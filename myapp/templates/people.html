@@ -6,7 +6,7 @@
             <h3>Added People</h3>
             <ul>
                 {% for person in persons %}
-                    <li><a href="{% url 'personal_details' person.id %}"> {{ person.firstname }} {{ person.lastname }}</a></li>
+                    <li><a href="{% url 'person_details' person.id %}"> {{ person.firstname }} {{ person.lastname }}</a></li>
                 {% empty %}
                     <li>No people added yet.</li>
                 {% endfor %}

@@ -21,12 +21,12 @@ def people(request):
     return render(request, 'people.html', {'form': form, 'persons': persons})
 
 
-def personal_details(request, person_id):
+def person_details(request, person_id):
     person = get_object_or_404(Person, id=person_id)
     # if person.user != request.user:
     #     return render(request, 'unauthorized.html')
     jobs = person.jobs.all()
-    return render(request, 'personal_details.html', {'person': person, 'jobs': jobs})
+    return render(request, 'person_details.html', {'person': person, 'jobs': jobs})
 
 
 def job_list(request, person_id):
